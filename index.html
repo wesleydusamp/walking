@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Download do Produto</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .header span {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .discord {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .discord img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .discord a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .download-box {
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px #ffffff22;
+      text-align: center;
+    }
+
+    .download-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .download-box a {
+      display: inline-block;
+      padding: 15px 25px;
+      background: #00ff00;
+      color: black;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .download-box a:hover {
+      background: #00cc00;
+    }
+
+    .background-gif {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 150px;
+      opacity: 0.2;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+
+  <div class="container">
+    <div class="header">
+      <img src="Logo_walking.jpg" alt="perfil">
+      <span>wesleydusamp</span>
+    </div>
+
+    <div class="discord">
+      <a href="https://discord.gg/G2HvFXaPWu" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+      </a>
+      <a href="https://discord.gg/G2HvFXaPWu" target="_blank">Suporte</a>
+    </div>
+
+    <div class="download-box">
+      <h2>Seu download está pronto!</h2>
+      <a href="https://drive.google.com/uc?export=download&id=12spStFhSn-QYVgii5v4zfF8_NFYEdF3I" download>
+        Baixar Produto
+      </a>
+    </div>
+
+    <img src="GIF_walking.gif" class="background-gif" alt="gif">
+  </div>
+
+  <script>
+    const starContainer = document.getElementById("stars");
+    for (let i = 0; i < 100; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * -100 + "px";
+      star.style.animationDuration = 2 + Math.random() * 3 + "s";
+      star.style.width = star.style.height = Math.random() * 2 + 1 + "px";
+      starContainer.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
