@@ -1,180 +1,165 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Download do Produto</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verificação Concluída</title>
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body {
-      background: black;
-      color: white;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-    }
-
-    .stars {
-      position: fixed;
-      width: 100%;
+    html, body {
       height: 100%;
-      z-index: 0;
-      pointer-events: none;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
       overflow: hidden;
     }
 
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      animation: fall linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-10px);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(110vh);
-        opacity: 0;
-      }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
     }
 
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      position: relative;
       z-index: 1;
+      position: relative;
+      text-align: center;
+      padding: 60px 30px;
+      max-width: 800px;
+      margin: auto;
+      color: white;
     }
 
-    .header {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .header img {
-      width: 50px;
-      height: 50px;
+    .logo {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid white;
+      margin-bottom: 30px;
+      box-shadow: 0 0 25px #00ffc3;
     }
 
-    .header span {
-      font-size: 18px;
-      font-weight: bold;
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      color: #00ffc3;
     }
 
-    .discord {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    p {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #ccc;
     }
 
-    .discord img {
-      width: 30px;
-      height: 30px;
+    .botao {
+      background-color: #00ffc3;
+      color: #000;
+      font-size: 1.1em;
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    .discord a {
-      text-decoration: none;
+    .botao:hover {
+      background-color: #00cc9d;
+      transform: scale(1.08);
+    }
+
+    .botoes-links {
+      margin-top: 30px;
+    }
+
+    .fechar-btn {
+      margin-top: 30px;
+      background-color: #ff5050;
       color: white;
       font-weight: bold;
     }
 
-    .download-box {
-      z-index: 2;
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 30px;
-      border-radius: 15px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 20px #ffffff22;
-      text-align: center;
-    }
-
-    .download-box h2 {
-      margin-bottom: 20px;
-    }
-
-    .download-box a {
-      display: inline-block;
-      padding: 15px 25px;
-      background: #00ff00;
-      color: black;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .download-box a:hover {
-      background: #00cc00;
-    }
-
-    .background-gif {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 150px;
-      opacity: 0.2;
-      z-index: 1;
+    .fechar-btn:hover {
+      background-color: #cc3f3f;
     }
   </style>
 </head>
 <body>
-
-  <div class="stars" id="stars"></div>
+  <canvas id="background"></canvas>
 
   <div class="container">
-    <div class="header">
-      <img src="Logo_walking.jpg" alt="perfil">
-      <span>wesleydusamp</span>
+    <img src="https://media.discordapp.net/attachments/1362091765229813965/1362102069753807020/GIF_walking.gif?ex=687fbbe8&is=687e6a68&hm=bb99c00933626428753f630b5176c102b071eb8c1d13b05ebeca022f27afd9d3&=" class="logo" alt="Logo Walking Store">
+
+    <h1>🎉 Verificação Concluída!</h1>
+    <p>Você foi verificado com sucesso no servidor <strong>Walking Store</strong>.</p>
+    <p>Agora pode fechar esta janela e aproveitar todos os recursos disponíveis!</p>
+
+    <div class="botoes-links">
+      <a href="https://discord.com/channels/1358938632748142682/1362908024808669285" class="botao" target="_blank">📩 Suporte</a>
+      <a href="https://wa.me/5555997230635" class="botao" target="_blank">📱 WhatsApp</a>
+      <a href="https://discord.gg/gQne4bGXSS" class="botao" target="_blank">🌐 Servidor</a>
     </div>
 
-    <div class="discord">
-      <a href="https://discord.gg/G2HvFXaPWu" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
-      </a>
-      <a href="https://discord.gg/G2HvFXaPWu" target="_blank">Suporte</a>
-    </div>
-
-    <div class="download-box">
-      <h2>Seu download está pronto!</h2>
-      <a href="https://wesleydusamp.github.io/compra-arma/Sistema%20De%20FabricarArma.zip" download>
-        Baixar Produto
-      </a>
-    </div>
-
-    <img src="GIF_walking.gif" class="background-gif" alt="gif">
+    <button class="botao fechar-btn" onclick="fecharPagina()">🚪 Fechar Página</button>
   </div>
 
   <script>
-    const starContainer = document.getElementById("stars");
-    for (let i = 0; i < 100; i++) {
-      let star = document.createElement("div");
-      star.className = "star";
-      star.style.left = Math.random() * 100 + "vw";
-      star.style.top = Math.random() * -100 + "px";
-      star.style.animationDuration = 2 + Math.random() * 3 + "s";
-      star.style.width = star.style.height = Math.random() * 2 + 1 + "px";
-      starContainer.appendChild(star);
+    const canvas = document.getElementById("background");
+    const ctx = canvas.getContext("2d");
+
+    function redimensionarCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', redimensionarCanvas);
+    redimensionarCanvas();
+
+    let estrelas = [];
+    for (let i = 0; i < 150; i++) {
+      estrelas.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        d: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    function desenhar() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+      ctx.beginPath();
+      for (let estrela of estrelas) {
+        ctx.moveTo(estrela.x, estrela.y);
+        ctx.arc(estrela.x, estrela.y, estrela.r, 0, Math.PI * 2, true);
+      }
+      ctx.fill();
+      atualizar();
+    }
+
+    function atualizar() {
+      for (let estrela of estrelas) {
+        estrela.y += estrela.d;
+        if (estrela.y > canvas.height) {
+          estrela.y = 0;
+          estrela.x = Math.random() * canvas.width;
+        }
+      }
+    }
+
+    setInterval(desenhar, 33);
+
+    function fecharPagina() {
+      window.close();
     }
   </script>
-
 </body>
 </html>
